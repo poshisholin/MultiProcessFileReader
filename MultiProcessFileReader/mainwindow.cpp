@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(centralWidget);
 
     // Инициализируем компоненты
-    writer = new Writer(); // Процесс записи
+    writer = new Writer("output.txt", this); // Передаем путь к файлу
     fileReader = new FileReader(); // Процесс чтения
 
     // Подключаем сигналы и слоты
