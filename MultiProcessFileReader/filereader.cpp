@@ -11,6 +11,12 @@ void FileReader::startReading() {
     if (!file.isOpen()) {
         file.open(QIODevice::ReadOnly | QIODevice::Text); // Открываем файл на чтение
     }
+
+    // Перемещаем указатель на конец файла
+    if (!file.atEnd()) {
+        file.seek(file.size());
+    }
+
     timer->start(1000); // Запускаем чтение каждые 1 сек
 }
 

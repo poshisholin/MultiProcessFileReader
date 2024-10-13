@@ -3,8 +3,8 @@
 
 #include <QObject>
 #include <QFile>
-#include <QTimer>
 #include <QTextStream>
+#include <QTimer>
 
 class FileReader : public QObject {
     Q_OBJECT
@@ -17,11 +17,10 @@ public:
 signals:
     void newLine(const QString &line);
 
-private slots:
+private:
     void readLine();
 
-private:
-    QFile file; // Файл для чтения
+    QFile file;
     QTimer *timer;
 };
 
